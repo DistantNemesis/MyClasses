@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Foundation
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -35,16 +36,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 92/255, green: 230/255, blue: 201/255, alpha: 1)
         // Do any additional setup after loading the view.
         print (defaults.string(forKey: "name") ?? "null")
         print(defaults.string(forKey: "grade") ?? "null")
+        print(defaults.string(forKey: "interestOne") ?? "null")
+        print(defaults.string(forKey: "interestTwo") ?? "null")
+        print(defaults.string(forKey: "interestThree") ?? "null")
+        print(defaults.string(forKey: "postSec") ?? "null")
         
         self.gradeMenu.delegate = self
         self.gradeMenu.dataSource = self
         pickerData = ["9", "10", "11", "12"]
         appLogo.layer.cornerRadius = 25
         appLogo.layer.borderWidth = 0
-        
+        continueButton.isEnabled = false
+    
         background.layer.cornerRadius = 25
         background.layer.borderWidth = 0
         background.backgroundColor = UIColor.white
@@ -52,12 +60,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         textField.borderStyle = UITextField.BorderStyle.roundedRect
     }
     
-    @IBAction func whenPressed(_ sender: UIButton) {
+    
+    @IBAction func edited(_ sender: Any) {
+        continueButton.isEnabled = true
+    }
+    
+    @IBAction func whenPressed(_ sender: UIButton!) {
         let text = textField.text
-        print(text ?? "null")
         defaults.set(text, forKey: "name")
     }
     
+
     
     
     @IBOutlet weak var appLogo: UIImageView!
