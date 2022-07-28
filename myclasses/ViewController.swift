@@ -55,6 +55,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
         background.layer.cornerRadius = 25
         background.layer.borderWidth = 0
+        
         background.backgroundColor = UIColor.white
         self.view.backgroundColor = UIColor(red: 92/255, green: 230/255, blue: 201/255, alpha: 1)
         textField.borderStyle = UITextField.BorderStyle.roundedRect

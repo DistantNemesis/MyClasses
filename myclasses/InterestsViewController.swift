@@ -94,9 +94,8 @@ class InterestsViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var buttonOne: UIButton!
     @IBOutlet weak var buttonTwo: UIButton!
     @IBOutlet weak var buttonThree: UIButton!
-    
     @IBOutlet weak var continueButton: UIButton!
-    
+
     @IBOutlet weak var welcome: UILabel!
     @IBOutlet weak var postSecMenu: UIPickerView!
     

@@ -34,7 +34,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         interests.remove(at: indexPath.row)
         self.dismiss(animated: true, completion: nil)
     }
-    
+
     var interests: [String] = ["Computers and tech", "Art", "Video games", "Movies", "Sports", "New languages", "Animals", "Fasion", "Space", "Cooking", "Politics"]
     
     let cellId = "cell"
@@ -42,7 +42,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.delegate = self
         tableView.dataSource = self
